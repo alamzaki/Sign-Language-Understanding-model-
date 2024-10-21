@@ -1,2 +1,4 @@
-# Sign-Language-Understanding-model-
-My codes help the deaf people to speak virtually so that any other person can understand them 
+# sign-language-detector-python
+
+Sign language detector with Python, OpenCV and Mediapipe BY ZAKI ALAM !
+
