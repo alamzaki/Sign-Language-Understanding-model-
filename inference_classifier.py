@@ -7,7 +7,7 @@ import numpy as np
 model_dict = pickle.load(open('./model.p', 'rb'))
 model = model_dict['model']
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -73,6 +73,7 @@ while True:
 
         predicted_character = labels_dict[int(prediction[0])]
 
+
         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 0), 4)
         cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3,
                     cv2.LINE_AA)
@@ -80,3 +81,5 @@ while True:
     cv2.imshow('frame', frame)
     cv2.waitKey(1)
 
+cap.release()
+cv2.destroyAllWindows()
